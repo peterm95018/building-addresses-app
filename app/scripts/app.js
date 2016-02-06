@@ -40,7 +40,12 @@ var app = angular
       url: '/edit/:locationId',
       templateUrl: 'views/edit.html',
       controller: 'EditCtrl'
-  });
+    })
+    .state('add', {
+      url: '/add',
+      templateUrl: 'views/edit.html',
+      controller: 'AddCtrl'
+    });
 
     $urlRouterProvider.otherwise('/');
 
