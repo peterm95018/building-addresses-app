@@ -1,0 +1,93 @@
+<form name="editForm" ng-submit="save()" novalidate>
+	<div class="form-group">
+		<label>CAAN</label>
+		<input type="text" name="caan" class="form-control" ng-model="location.caan" required>
+		 <p ng-show="editForm.caan.$invalid && !editForm.caan.$pristine" class="help-block">
+		 CAAN entry is required.</p>
+	</div>
+
+	<div class="form-group">
+		<label>Asset Name</label>
+		<input type="text" name="assetName" class="form-control" ng-model="location.assetName" required>
+		<p ng-show="editForm.assetName.$invalid && !editForm.assetName.$pristine" class="help-block">
+		 Asset Name is required.</p>
+	</div>
+
+	<div class="form-group">
+		<label>Address</label>
+		<input type="text" name="address" class="form-control" ng-model="location.address" required>
+		<p ng-show="editForm.address.$invalid && !editForm.address.$pristine" class="help-block">
+		 Street address is required.</p>
+	</div>
+
+	<div class="form-group">
+		<label>City</label>
+		<input type="text" name="city" class="form-control" ng-model="location.city" required>
+		<p ng-show="editForm.city.$invalid && !editForm.city.$pristine" class="help-block">
+		 City is required.</p>
+	</div>
+
+	<div class="form-group">
+		<label>State</label>
+		<input type="text" name="state" class="form-control" ng-model="location.state" required>
+		<p ng-show="editForm.state.$invalid && !editForm.state.$pristine" class="help-block">
+		 State is required.</p>
+	</div>
+
+	<div class="form-group">
+		<label>Zip</label>
+		<input type="text" name="zip" class="form-control" ng-model="location.zip" required>
+		<p ng-show="editForm.zip.$invalid && !editForm.zip.$pristine" class="help-block">
+		 Zip is required.</p>
+	</div>
+
+	<div class="form-group">
+		<label>Lattitude</label>
+		<input type="text" name="lattitude" class="form-control" ng-model="location.lattitude" required>
+		<p ng-show="editForm.lattitude.$invalid && !editForm.lattitude.$pristine" class="help-block">
+		 Lattitude is required.</p>
+	</div>
+
+	<div class="form-group">
+		<label>Longitude</label>
+		<input type="text" name="caan" class="form-control" ng-model="location.longitude" required>
+		<p ng-show="editForm.longitude.$invalid && !editForm.longitude.$pristine" class="help-block">
+		 Longitude is required.</p>
+	</div>
+<button class="btn btn-primary" ng-disabled="editForm.$invalid">Save</button>
+</form>
+
+
+
+
+<!-- <div ng-controller="EditCtrl">
+	<div class="list">
+		<div class="item item-input">
+			<input type="text" ng-model="location.caan">
+		</div>
+		<div class="item item-input">
+			<input type="text" ng-model="location.assetName">
+		</div>
+		<div class="item">
+			<input type="text" ng-model="location.address">
+		</div>
+		<div class="item">
+			<input type="text" ng-model="location.city">
+		</div>
+		<div class="item">
+			<input type="text" ng-model="location.state">
+		</div>
+		<div class="item">
+			<input type="text" ng-model="location.zip">
+		</div>
+		<div class="item">
+			<input type="text" ng-model="location.lattitude">
+		</div>
+		<div class="item">
+			<input type="text" ng-model="location.longitude">
+		</div>
+	<div class="padding">
+
+	<button class="button button-block button-positive" ng-click="save()">Save</button>
+	</div>
+</div> -->
