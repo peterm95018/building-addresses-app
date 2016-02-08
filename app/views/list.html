@@ -1,3 +1,24 @@
+<div ng-controller="ListCtrl">
+	<div><h2>Building Addresses</h2></div>
+	<table class="table table-striped table-bordered table-hover">
+		<tbody>
+			<tr ng-repeat="location in locations track by location._id">
+				<td>
+					<span class="glyphicon glyphicon-menu-right pull-right"></span>
+					<a href="#/edit/{{location._id}}">
+						<h4>{{location.assetName}}</h4>
+			        	<p>
+			        	{{location.address}}</br>
+			        	{{location.city}}, {{location.state}}</br>
+			        	{{location.zip}}</br>
+			        	</p>
+			        </a>
+			    </td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
 <!-- <div ng-controller="ListCtrl">
 	<div><h2>Building Addresses</h2></div>
 	<div class="list">
@@ -13,55 +34,4 @@
 			</a>
          </div>
 	</div>
-</div> -->
-
-
-<div ng-controller="ListCtrl">
-	<div><h2>Building Addresses</h2></div>
-	<table class="table table-striped table-bordered table-hover">
-		<tbody>
-			<tr ng-repeat="location in locations track by location._id">
-				<td>
-					<span class="glyphicon glyphicon-menu-right pull-right"></span>
-					<a href="#/edit/{{location._id}}">
-							<h4>{{location.assetName}}</h4>
-			        		<p>
-			        		{{location.address}}</br>
-			        		{{location.city}}, {{location.state}}</br>
-			        		{{location.zip}}</br>
-			        		</p>
-			        		</a>
-			    </td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-
-
-<!-- <div ng-controller="ListCtrl">
-        <div class="row" ng-repeat="location in locations track by location._id">
-            <div class="col-md-7" >
-                <a href="#">
-                    <span class="glyphicon glyphicon-menu-right pull-right"></span>
-					<a href="#/edit/{{location._id}}">
-				<h4>{{location.assetName}}</h4>
-				
-        		<p>
-        		{{location.address}}</br>
-        		{{location.city}}, {{location.state}}</br>
-        		{{location.zip}}</br>
-        		</p>
-        		</a>
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>Project One</h3>
-                <h4>Subheading</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-                <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <hr>
 </div> -->
