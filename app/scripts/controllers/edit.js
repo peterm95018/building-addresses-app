@@ -18,12 +18,21 @@ angular.module('buildingAddressesAppApp')
         $state.go('list');
     };
 
+    // get the location
     $scope.loadLocationStore = function() {
         $scope.location = LocationStore.get({locationId: $stateParams.locationId});
     };
 
     $scope.loadLocationStore();
 
+
+    // remove a location item
+    $scope.remove = function() {
+        $scope.location.$remove(function() {
+            
+        });
+        $state.go('list');
+    };
 
 });
 

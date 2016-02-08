@@ -2,12 +2,14 @@ this is the list view
 <div ng-controller="ListCtrl">
 
 	<div class="list">
-		<a href="#/edit/{{location._id}}" class="item" ng-repeat="location in locations track by location._id">
-			<h2>{{location.assetName}}</h2>
-        	<p>{{location.address}}</p>
-		</a>
-        	<!-- <i class="icon ion-arrow-right-b"></i>
-        	<ion-option-button class="button-assertive icon-left ion-trash-b"
-          	ng-click="remove(note.id)">Delete</ion-option-button> -->
+		<div class="item">
+			<a href="#/edit/{{location._id}}" class="item" ng-repeat="location in locations track by location._id">
+				<span class="glyphicon glyphicon-menu-right pull-right"></span>
+				<h2>{{location.assetName}}</h2>
+        		<p>{{location.address}}</p>
+			</a>
+         </div>
 	</div>
 </div>
+
+        	
