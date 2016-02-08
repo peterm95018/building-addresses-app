@@ -31,6 +31,11 @@ var app = angular
       templateUrl: 'views/about.html',
       controller: 'AboutCtrl'
     })
+    .state('developer', {
+      url: '/developer',
+      templateUrl: 'views/developer.html',
+      controller: 'DeveloperCtrl'
+    })
     .state('list', {
       url: '/list',
       templateUrl: 'views/list.html',

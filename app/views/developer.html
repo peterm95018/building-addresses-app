@@ -1,0 +1,38 @@
+<h2>Developers</h2>
+<div>
+
+
+The data in this site includes all campus building addresses as of Fall 2014. 
+
+These addresses are for wayfinding and emergency response purposes only. Please continue to use your 1156 High St address for deliveries.
+
+Developers may query and receive results in JSON format, address and locative data for campus buildings and mail stops. This is a work in progress and will continue to evolve.
+
+<strong>Content Definitions</strong>
+building_address content type holds info for all items that have been assigned building addresses. This includes parking lots, fields, etc. I added an Item Type field to distinguish built and developed entities from parking lots. All parking lots are preceded with TAPS in their title.
+
+mail_stops is based on the mail stop data received. We matched those records to assigned building addresses. Still to do is geocoding.
+
+We've loaded the official building information into this site. The large data set includes asset number, county fire map page, ucsc fire map page (which are hidden by default). We've also got addresses for things like Parking Lots and we hide those too.
+
+Other fields can be exposed or hidden or reformatted as needed. We have the following location address per node:
+Building Name, Official Building Name, Building Alias, Street, City, Additional (1156 High St.), City, State, Zip, Coordinates, Latitude, Longitude.
+
+Data is geocoded via Google. We're still spot checking to verify good data. I suspect we'll want to reformat to decimal lat/lng formats.
+
+We'll be using a subset of this data for the maps site. That site doesn't need every building.
+
+<strong>API's</strong>
+We have the following for you to work with and provide feedback. Once we've nailed down the basic req's we'll put a production URL into service and track changes from there.
+
+http://building-address.ucsc.edu/api/ucsc-building-addresses.json
+http://building-address.ucsc.edu/api/ucsc-mail-stops.json
+
+Get a specific building or mail stop by its nid:
+http://building-address.ucsc.edu/api/ucsc-building-addresses.json?nid=5073
+
+Get a set of buildings based on College tag (still working on this)
+http://building-address.ucsc.edu/api/buildings-by-college-tag.json?tag=Oakes%20College 
+
+
+</div>
