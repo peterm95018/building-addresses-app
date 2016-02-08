@@ -25,6 +25,10 @@ angular.module('buildingAddressesAppApp')
 
     $scope.loadLocationStore();
 
+    // set ng-show on edit.html to show delete button in edit mode
+    $scope.editMode = true;
+
+
 
     // remove a location item
     $scope.remove = function() {

@@ -12,6 +12,9 @@ angular.module('buildingAddressesAppApp')
 
   $scope.location = new LocationStore();
 
+  // set ng-show on edit.html to hide delete button in add mode
+  $scope.editMode = false;
+
   $scope.save = function() {
   	  LocationStore.save($scope.location, function() {
   	});
