@@ -1,15 +1,40 @@
-this is the list view
-<div ng-controller="ListCtrl">
-
+<!-- <div ng-controller="ListCtrl">
+	<div><h2>Building Addresses</h2></div>
 	<div class="list">
 		<div class="item">
 			<a href="#/edit/{{location._id}}" class="item" ng-repeat="location in locations track by location._id">
 				<span class="glyphicon glyphicon-menu-right pull-right"></span>
-				<h2>{{location.assetName}}</h2>
-        		<p>{{location.address}}</p>
+				<h4>{{location.assetName}}</h4>
+        		<p>
+        		{{location.address}}</br>
+        		{{location.city}}, {{location.state}}</br>
+        		{{location.zip}}</br>
+        		</p>
 			</a>
          </div>
 	</div>
-</div>
+</div> -->
 
-        	
+
+<div ng-controller="ListCtrl">
+	<div><h2>Building Addresses</h2></div>
+<table class="table table-striped table-bordered table-hover">
+<tbody>
+<tr ng-repeat="location in locations track by location._id">
+	<td>
+		<span class="glyphicon glyphicon-menu-right pull-right"></span>
+		<a href="#/edit/{{location._id}}">
+				<h4>{{location.assetName}}</h4>
+				
+        		<p>
+        		{{location.address}}</br>
+        		{{location.city}}, {{location.state}}</br>
+        		{{location.zip}}</br>
+        		</p>
+        		</a>
+    </td>
+</tr>
+</tbody>
+</table>
+
+</div>

@@ -81,3 +81,13 @@ body {
     border-bottom: 0;
   }
 }
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+a:hover {
+  color #000;
+  text-decoration: none;
+  cursor: pointer;
+}
