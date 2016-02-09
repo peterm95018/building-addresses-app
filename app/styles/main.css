@@ -94,8 +94,8 @@ a:hover {
 a.regular {
   color: #000;
 }
-a.regular:hover {
-  color: #000;
-  cursor: pointer;
+
+.table tbody>tr>td.vert-align{
+    vertical-align: middle;
 }
 
