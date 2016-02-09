@@ -1,3 +1,7 @@
+<div>
+	<p>Search on building names, street addresses, or asset (CAAN) numbers.</p>
+</div>
+
 <div ng-controller="ListCtrl">
 	<form>
     <div class="form-group">
@@ -16,15 +20,39 @@
 		<tbody>
 			<tr ng-repeat="location in locations | filter:searchLocation track by location._id">
 				<td>
-					<span class="glyphicon glyphicon-menu-right pull-right"></span>
-					<a href="#/edit/{{location._id}}">
-						<h4>{{location.assetName}}</h4>
+					<h4>{{location.assetName}}</h4>
 			        	<p>
 			        	{{location.address}}</br>
 			        	{{location.city}}, {{location.state}}</br>
 			        	{{location.zip}}</br>
 			        	</p>
-			        </a>
+			        <div class="animate-show" ng-show="showMore">
+			        	
+			        	<p>
+			        	<b>Asset:</b> {{location.assetName}}</br>
+			        	<b>Address:</b> {{location.address}}</br>
+			        	<b>City:</b> {{location.city}}</br>
+			        	<b>State:</b> {{location.state}}</br>
+			        	<b>Zip:</b> {{location.zip}}</br>
+			        	</p>
+
+			        	<p>
+			        	<b>Asset Number:</b> {{location.caan}}</br>
+			        	<b>Lattitude:</b> {{location.lattitude}}</br>
+			        	<b>Longitude:</b> {{location.longitude}}</br>
+			        	<b>Aliases:</b> building aliases placeholder</br>
+			        	</p>
+
+
+			        </div>
+			        
+			    </td>
+			    <td width="40%">
+			    	<div class="button-group btn-group-sm" role="group" aria-label="...">
+						<button type="button" class="btn  btn-info" ng-click="showMore = !showMore">More</button>
+						<button type="button" class="btn btn-success">Map</button>
+						<a href="#/edit/{{location._id}}" type="button" role="button" class="btn btn-warning">Edit</a>
+			        </div>
 			    </td>
 			</tr>
 		</tbody>
