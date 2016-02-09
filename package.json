@@ -39,12 +39,6 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "bcrypt-nodejs": "0.0.3",
-    "connect-flash": "^0.1.1",
-    "cookie-parser": "^1.4.1",
-    "express-session": "^1.13.0",
-    "method-override": "^2.3.5",
-    "passport": "^0.3.2",
-    "passport-local": "^1.0.0"
+
   }
 }
