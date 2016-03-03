@@ -26,6 +26,11 @@ var app = angular
       templateUrl: 'views/main.html',
       controller: 'MainCtrl'
     })
+    .state('login', {
+      url: '/login',
+      templateUrl: 'views/login.html',
+      controller: 'userCtrl'
+    })
     .state('about', {
       url: '/about',
       templateUrl: 'views/about.html',
