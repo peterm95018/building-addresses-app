@@ -32,12 +32,12 @@ var app = angular
     .state('main', {
       url: '/',
       templateUrl: 'views/main.html',
-
     })
     .state('login', {
       url: '/login',
       templateUrl: 'views/login.html',
-      controller: 'userCtrl'
+      controller: 'mainController',
+      controllerAs: 'login'
     })
     .state('about', {
       url: '/about',
