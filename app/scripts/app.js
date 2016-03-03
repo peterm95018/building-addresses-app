@@ -12,11 +12,19 @@ var app = angular
   .module('buildingAddressesAppApp', [
     'ngAnimate',
     'ngCookies',
-    'ngResource',
-    'ngRoute',
+    // 'ngResource',
+    // 'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ui.router'
+    'ui.router',
+    'mainCtrl',
+    'userCtrl',
+    'locationCtrl',
+    'navCtrl',
+    'authService',
+    'locationService',
+    'userService',
+
     ]);
 
   app.config(function($stateProvider, $urlRouterProvider) {
