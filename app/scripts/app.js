@@ -72,9 +72,10 @@ var app = angular
 
   });
 
- app.config(function($httpProvider) {
+// application configuration to integrate token into requests
+app.config(function($httpProvider) {
+
 	// attach our auth interceptor to the http requests
-	$httpProvider.interceptor.push('AuthInterceptor');
- });
+	$httpProvider.interceptors.push('AuthInterceptor');
 
-
+});
