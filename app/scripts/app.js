@@ -32,7 +32,7 @@ var app = angular
     .state('main', {
       url: '/',
       templateUrl: 'views/main.html',
-      controller: 'MainCtrl'
+
     })
     .state('login', {
       url: '/login',
@@ -42,46 +42,39 @@ var app = angular
     .state('about', {
       url: '/about',
       templateUrl: 'views/about.html',
-      controller: 'AboutCtrl'
+
     })
     .state('developer', {
       url: '/developer',
       templateUrl: 'views/developer.html',
-      controller: 'DeveloperCtrl'
+
     })
     .state('list', {
       url: '/list',
       templateUrl: 'views/list.html',
-      controller: 'ListCtrl'
+      controller: 'locationController',
+      controllerAs: 'location'
     })
     .state('edit', {
       url: '/edit/:locationId',
       templateUrl: 'views/edit.html',
-      controller: 'EditCtrl'
+      controller: 'locationEditController',
+      controllerAs: 'location'
     })
-    .state('add', {
-      url: '/add',
+    .state('create', {
+      url: '/locations/create',
       templateUrl: 'views/edit.html',
-      controller: 'AddCtrl'
+      controller: 'locationCreateControl',
+      controllerAs: 'location'
     });
 
     $urlRouterProvider.otherwise('/');
 
   });
 
-  // app.config(function ($routeProvider) {
-  //   $routeProvider
-  //     .when('/', {
-  //       templateUrl: 'views/main.html',
-  //       controller: 'MainCtrl',
-  //       controllerAs: 'main'
-  //     })
-  //     .when('/about', {
-  //       templateUrl: 'views/about.html',
-  //       controller: 'AboutCtrl',
-  //       controllerAs: 'about'
-  //     })
-  //     .otherwise({
-  //       redirectTo: '/'
-  //     });
-  // });
+ app.config(function($httpProvider) {
+	// attach our auth interceptor to the http requests
+	$httpProvider.interceptor.push('AuthInterceptor');
+ });
+
+
