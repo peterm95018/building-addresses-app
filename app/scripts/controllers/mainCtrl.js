@@ -7,7 +7,7 @@ angular.module('mainCtrl', [])
 	// get info if a person is logged in
 	vm.loggedIn = Auth.isLoggedIn();
 
-	console.log('logged in mainController' + vm.loggedIn);
+	console.log('logged in mainController ' + vm.loggedIn);
 
 	// check to see if a user is logged in on every request
 	$rootScope.$on('$routeChangeStart', function() {
@@ -31,9 +31,9 @@ angular.module('mainCtrl', [])
 			.success(function(data) {
 				vm.processing = false;			
 
-				// if a user successfully logs in, redirect to users page
+				// if a user successfully logs in, redirect to locations page
 				if (data.success)			
-					$location.path('/users');
+					$location.path('/locations');
 				else 
 					vm.error = data.message;
 				

@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="buildingAddressesAppApp">
+  <body ng-app="buildingAddressesApp">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -57,14 +57,15 @@
 
     <div class="footer">
       <div class="container">
-        <!-- <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p> -->
         <p><span class="glyphicon glyphicon-envelope"></span>
         	<a mailto:"peterm@ucsc.edu">Contact</a></p>
         
-        <div ng-if="">
-        	<span class=""></span>
-        		<a href="#" ng-click="main.doLogout()">Logout</a>
-        </div>
+        <div ng-controller="mainController as main">
+	        <div ng-if="main.loggedIn">
+				<p><span class="glyphicon glyphicon-user"></span>
+				<a href="#" ng-click="main.doLogout()" class="">Logout</a></p>
+			</div>
+		</div>
       </div>
     </div>
 

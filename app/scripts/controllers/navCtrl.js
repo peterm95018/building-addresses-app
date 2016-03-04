@@ -8,7 +8,15 @@
  * Controller of the buildingAddressesAppApp
  */
 angular.module('navCtrl', [])
-  .controller('navigationController', ['$scope', '$location', function ($scope, $location) {
+  .controller('navigationController', ['$scope', '$location', 'Auth', function ($scope, $location, Auth) {
+
+  	var vm = this;
+
+  	// get info if a person is logged in
+	vm.loggedIn = Auth.isLoggedIn();
+
+	console.log('logged in navigationController ' + vm.loggedIn);
+
   	$scope.items = [
   		{path: '/', title: 'Home'},
 		{path: '/locations', title: 'Addresses'},

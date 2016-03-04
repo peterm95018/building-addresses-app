@@ -9,7 +9,7 @@
  * Main module of the application.
  */
 var app = angular
-  .module('buildingAddressesAppApp', [
+  .module('buildingAddressesApp', [
     'ngAnimate',
     'ngCookies',
     // 'ngResource',
@@ -33,7 +33,7 @@ var app = angular
       url: '/',
       templateUrl: 'views/main.html',
       controller: 'mainController',
-      controllerAs: ''
+      controllerAs: 'main'
     })
     .state('login', {
       url: '/login',
