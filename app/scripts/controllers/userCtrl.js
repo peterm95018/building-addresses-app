@@ -66,7 +66,7 @@ angular.module('userCtrl', ['userService'])
 })
 
 // controller applied to user edit page
-.controller('userEditController', function($routeParams, User) {
+.controller('userEditController', function($state, $location, User) {
 
 	var vm = this;
 
@@ -76,7 +76,8 @@ angular.module('userCtrl', ['userService'])
 
 	// get the user data for the user you want to edit
 	// $routeParams is the way we grab data from the URL
-	User.get($routeParams.user_id)
+	//User.get($routeParams.user_id)
+		User.get($state.params.user_id)
 		.success(function(data) {
 			vm.userData = data;
 		});
@@ -87,7 +88,8 @@ angular.module('userCtrl', ['userService'])
 		vm.message = '';
 
 		// call the userService function to update 
-		User.update($routeParams.user_id, vm.userData)
+		//User.update($routeParams.user_id, vm.userData)
+			User.update($state.params.user_id, vm.userData)
 			.success(function(data) {
 				vm.processing = false;
 
@@ -97,6 +99,7 @@ angular.module('userCtrl', ['userService'])
 				// bind the message from our API to vm.message
 				vm.message = data.message;
 			});
+			$location.path('#/users');
 	};
 
 });

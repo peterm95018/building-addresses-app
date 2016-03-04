@@ -39,12 +39,7 @@
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
             <ul class="nav navbar-nav" ng-controller="navigationController" class="menu">
-<!--               <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/locations">Addresses</a></li>
-              <li><a ng-href="#/mail-stops">Mail Stops</a></li>
-              <li><a ng-href="#/developer">Developers</a></li>
-              <li><a ng-href="#/about">About</a></li>
-              <li><a ng-href="#/login">Login</a></li> -->
+			<!-- menu items dynamically created -->
               <li ng-repeat="item in items" ng-class="{active: isActive(item)}">
               <a href="#{{item.path}}">{{item.title}}</a></li>
               
@@ -63,7 +58,13 @@
     <div class="footer">
       <div class="container">
         <!-- <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p> -->
-        <p><span class="glyphicon glyphicon-envelope"></span> Contact</p>
+        <p><span class="glyphicon glyphicon-envelope"></span>
+        	<a mailto:"peterm@ucsc.edu">Contact</a></p>
+        
+        <div ng-if="">
+        	<span class=""></span>
+        		<a href="#" ng-click="main.doLogout()">Logout</a>
+        </div>
       </div>
     </div>
 

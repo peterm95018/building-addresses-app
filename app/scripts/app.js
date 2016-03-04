@@ -32,6 +32,8 @@ var app = angular
     .state('main', {
       url: '/',
       templateUrl: 'views/main.html',
+      controller: 'mainController',
+      controllerAs: ''
     })
     .state('login', {
       url: '/login',
@@ -39,15 +41,21 @@ var app = angular
       controller: 'mainController',
       controllerAs: 'login'
     })
-    .state('about', {
-      url: '/about',
-      templateUrl: 'views/about.html',
-
+    .state('logout', {
+      url: '/logout',
+      templateUrl: 'views/login.html',
+      controller: 'mainController',
+      controllerAs: 'login'
+    })
+    .state('mail-stops', {
+	 url: '/mail-stops',
+	 $templateUrl: 'views/mail-stops.html',
+	 controller: '',
+	 controllerAs: ''
     })
     .state('developers', {
       url: '/developers',
       templateUrl: 'views/developer.html',
-
     })
     .state('list', {
       url: '/locations',
@@ -67,11 +75,23 @@ var app = angular
       controller: 'locationCreateControl',
       controllerAs: 'location'
     })
-    .state('mail-stops', {
-	 url: '/mail-stops',
-	 $templateUrl: 'views/mail-stops.html',
-	 controller: '',
-	 controllerAs: ''
+    .state('users', {
+	  url: '/users',
+	  templateUrl: 'views/users/all.html',
+	  controller: 'userController',
+	  controllerAs: 'user'
+    })
+    .state('userscreate', {
+	  url: '/users/create',
+	  templateUrl: 'views/users/single.html',
+	  controller: 'userCreateController',
+	  controllerAs: 'user'
+    })
+     .state('usersedit', {
+	  url: '/users/:user_id',
+	  templateUrl: 'views/users/single.html',
+	  controller: 'userEditController',
+	  controllerAs: 'user'
     })
 
     $urlRouterProvider.otherwise('/');

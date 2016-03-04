@@ -6,9 +6,14 @@
 
 angular.module('locationCtrl',['locationService', 'ui.router'])
 
-.controller('locationController', function($location, Location) {
+.controller('locationController', function($location, Location, Auth) {
 
 	var vm = this;
+
+		// get info if a person is logged in
+	vm.loggedIn = Auth.isLoggedIn();
+
+	console.log('logged in locationController ' + vm.loggedIn);
 
 	// set a processing variable to show loading things
 	vm.processing = true;
@@ -28,11 +33,16 @@ angular.module('locationCtrl',['locationService', 'ui.router'])
 })
 
 // controller applied to user creation page
-.controller('locationCreateController', function($location, Location) {
+.controller('locationCreateController', function($location, Location, Auth) {
 
 	console.log('locationCreateController');
 	
 	var vm = this;
+
+			// get info if a person is logged in
+	vm.loggedIn = Auth.isLoggedIn();
+
+	console.log('logged in locationCreateController ' + vm.loggedIn);
 
 	// variable to hide/show elements of the view
 	// differentiates between create or edit pages
@@ -59,13 +69,18 @@ angular.module('locationCtrl',['locationService', 'ui.router'])
 
 // controller applied to user edit page
 // remove $routeParams and subsititue $stateProvider equivalent so we can get location_id
-.controller('locationEditController', function($state, $location, Location) {
+.controller('locationEditController', function($state, $location, Location, Auth) {
 
 	var vm = this;
 
 	// variable to hide/show elements of the view
 	// differentiates between create or edit pages
 	vm.type = 'edit';
+
+			// get info if a person is logged in
+	vm.loggedIn = Auth.isLoggedIn();
+
+	console.log('logged in locationController ' + vm.loggedIn);
 
 
 	// get the location data for the location you want to edit
