@@ -44,8 +44,8 @@ var app = angular
       templateUrl: 'views/about.html',
 
     })
-    .state('developer', {
-      url: '/developer',
+    .state('developers', {
+      url: '/developers',
       templateUrl: 'views/developer.html',
 
     })
@@ -66,7 +66,13 @@ var app = angular
       templateUrl: 'views/edit.html',
       controller: 'locationCreateControl',
       controllerAs: 'location'
-    });
+    })
+    .state('mail-stops', {
+	 url: '/mail-stops',
+	 $templateUrl: 'views/mail-stops.html',
+	 controller: '',
+	 controllerAs: ''
+    })
 
     $urlRouterProvider.otherwise('/');
 

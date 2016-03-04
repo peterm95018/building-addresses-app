@@ -8,11 +8,14 @@
  * Controller of the buildingAddressesAppApp
  */
 angular.module('navCtrl', [])
-  .controller('navigationControllerl', ['$scope', '$location', function ($scope, $location) {
+  .controller('navigationController', ['$scope', '$location', function ($scope, $location) {
   	$scope.items = [
+  		{path: '/', title: 'Home'},
 		{path: '/locations', title: 'Addresses'},
 		{path: '/developers', title: 'Developers'},
-		{path: '/about', title: 'About'}
+		{path: '/login', title: 'Login'},
+		{path: '/mail-stops', title: 'Mail Stops'}
+
 	];
 
 	$scope.isActive = function(item) {

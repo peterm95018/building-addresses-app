@@ -1,3 +1,13 @@
+	<div ng-if="location.loggedIn">
+		Locations 
+		<a href="/locations/create" class="btn btn-default">
+			<span class="glyphicon glyphicon-plus"></span> 
+			New Location
+		</a>
+	</div>
+
+
+
 <div>
 	<p>Search on building names, street addresses, or asset (CAAN) numbers.</p>
 </div>
@@ -7,9 +17,7 @@
     <div class="form-group">
       <div class="input-group">
         <div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
-
         <input type="text" class="form-control" placeholder="Search Location" ng-model="searchLocation">
-
       </div>      
     </div>
   </form>
@@ -51,27 +59,10 @@
 			    	<div class="button-group btn-group-sm" role="group" aria-label="...">
 						<button type="button" class="btn  btn-info" ng-click="showMore = !showMore">More</button>
 						<button type="button" class="btn btn-success">Map</button>
-						<a href="#/locations/{{location._id}}" type="button" role="button" class="btn btn-warning">Edit {{location._id}}</a>
+						<a href="#/locations/{{location._id}}" type="button" role="button" class="btn btn-warning">Edit</a>
 			        </div>
 			    </td>
 			</tr>
 		</tbody>
 	</table>
 </div>
-
-<!-- <div ng-controller="ListCtrl">
-	<div><h2>Building Addresses</h2></div>
-	<div class="list">
-		<div class="item">
-			<a href="#/edit/{{location._id}}" class="item" ng-repeat="location in locations track by location._id">
-				<span class="glyphicon glyphicon-menu-right pull-right"></span>
-				<h4>{{location.assetName}}</h4>
-        		<p>
-        		{{location.address}}</br>
-        		{{location.city}}, {{location.state}}</br>
-        		{{location.zip}}</br>
-        		</p>
-			</a>
-         </div>
-	</div>
-</div> -->
