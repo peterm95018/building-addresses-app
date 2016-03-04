@@ -1,65 +1,100 @@
-<form name="editForm" ng-submit="save()" novalidate>
+<div class="page-header">
+	<h1 ng-if="location.type == 'create'">Create Location</h1>
+	<h1 ng-if="location.type == 'edit'">Edit Location</h1>
+</div>
+
+
+<form name="editForm" class="form-horizontal" ng-submit="location.saveLocation()" novalidate>
+
 	<div class="form-group">
-		<label>CAAN</label>
-		<input type="text" name="caan" class="form-control" ng-model="location.caan" required>
-		 <p ng-show="editForm.caan.$invalid && !editForm.caan.$pristine" class="help-block">
-		 CAAN entry is required.</p>
+		<label class="col-sm-2 control-label">CAAN</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" ng-model="location.locationData.caan" required>
+			<!-- <p ng-show="editForm.caan.$invalid && !editForm.caan.$pristine" class="help-block">
+		 CAAN entry is required.</p> -->
+		</div>
 	</div>
 
 	<div class="form-group">
-		<label>Asset Name</label>
-		<input type="text" name="assetName" class="form-control" ng-model="location.assetName" required>
-		<p ng-show="editForm.assetName.$invalid && !editForm.assetName.$pristine" class="help-block">
-		 Asset Name is required.</p>
+		<label class="col-sm-2 control-label">Asset Name</label>
+		<div class="col-sm-6">
+			<input type="text" name="assetName" class="form-control" ng-model="location.locationData.assetName" required>
+		<!-- <p ng-show="editForm.assetName.$invalid && !editForm.assetName.$pristine" class="help-block">Asset Name is required.</p> -->
+		</div>
 	</div>
 
 	<div class="form-group">
-		<label>Address</label>
-		<input type="text" name="address" class="form-control" ng-model="location.address" required>
-		<p ng-show="editForm.address.$invalid && !editForm.address.$pristine" class="help-block">
-		 Street address is required.</p>
+		<label class="col-sm-2 control-label">Address</label>
+		<div class="col-sm-6">
+			<input type="text" name="address" class="form-control" ng-model="location.locationData.address" required>
+			<!-- <p ng-show="editForm.address.$invalid && !editForm.address.$pristine" class="help-block">
+			 Street address is required.</p> -->
+		 </div>
 	</div>
 
 	<div class="form-group">
-		<label>City</label>
-		<input type="text" name="city" class="form-control" ng-model="location.city" required>
-		<p ng-show="editForm.city.$invalid && !editForm.city.$pristine" class="help-block">
-		 City is required.</p>
+		<label class="col-sm-2 control-label">City</label>
+		<div class="col-sm-6">
+			<input type="text" name="city" class="form-control" ng-model="location.locationData.city" required>
+			<!-- <p ng-show="editForm.city.$invalid && !editForm.city.$pristine" class="help-block">
+			 City is required.</p> -->
+		 </div>
 	</div>
 
 	<div class="form-group">
-		<label>State</label>
-		<input type="text" name="state" class="form-control" ng-model="location.state" required>
-		<p ng-show="editForm.state.$invalid && !editForm.state.$pristine" class="help-block">
-		 State is required.</p>
+		<label class="col-sm-2 control-label">State</label>
+		<div class="col-sm-6">
+			<input type="text" name="state" class="form-control" ng-model="location.locationData.state" required>
+			<!-- <p ng-show="editForm.state.$invalid && !editForm.state.$pristine" class="help-block">
+			 State is required.</p> -->
+		 </div>
 	</div>
 
 	<div class="form-group">
-		<label>Zip</label>
-		<input type="text" name="zip" class="form-control" ng-model="location.zip" required>
-		<p ng-show="editForm.zip.$invalid && !editForm.zip.$pristine" class="help-block">
-		 Zip is required.</p>
+		<label class="col-sm-2 control-label">Zip</label>
+		<div class="col-sm-6">
+		<input type="text" name="zip" class="form-control" ng-model="location.locationData.zip" required>
+		<!-- <p ng-show="editForm.zip.$invalid && !editForm.zip.$pristine" class="help-block">
+		 Zip is required.</p> -->
+		 </div>
 	</div>
 
 	<div class="form-group">
-		<label>Lattitude</label>
-		<input type="text" name="lattitude" class="form-control" ng-model="location.lattitude" required>
-		<p ng-show="editForm.lattitude.$invalid && !editForm.lattitude.$pristine" class="help-block">
-		 Lattitude is required.</p>
+		<label class="col-sm-2 control-label">Latitude</label>
+		<div class="col-sm-6">
+		<input type="text" name="lattitude" class="form-control" ng-model="location.locationData.lattitude" required>
+		<!-- <p ng-show="editForm.lattitude.$invalid && !editForm.lattitude.$pristine" class="help-block">
+		 Lattitude is required.</p> -->
+		 </div>
 	</div>
 
 	<div class="form-group">
-		<label>Longitude</label>
-		<input type="text" name="caan" class="form-control" ng-model="location.longitude" required>
-		<p ng-show="editForm.longitude.$invalid && !editForm.longitude.$pristine" class="help-block">
-		 Longitude is required.</p>
+		<label class="col-sm-2 control-label">Longitude</label>
+		<div class="col-sm-6">
+		<input type="text" name="caan" class="form-control" ng-model="location.locationData.longitude" required>
+		<!-- <p ng-show="editForm.longitude.$invalid && !editForm.longitude.$pristine" class="help-block">
+		 Longitude is required.</p> -->
+		 </div>
 	</div>
-<button class="btn btn-primary" ng-disabled="editForm.$invalid">Save</button>
 
-<button ng-show="editMode" type="button" class="btn btn-danger" ng-click="remove(location._id)" aria-label="Left Align">
-  <span class="glyphicon glyphicon-trash" aria-hidden="true"> Delete</span>
-</button>
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-6">
+		<button type="submit" class="btn btn-success btn-lg btn-block" ng-if="location.type == 'create'">Create Location</button>
+		<button type="submit" class="btn btn-success btn-lg btn-block" ng-if="location.type == 'edit'">Update Location</button>
+		
+<!-- use a link with btn classes to get the Delte to work properly. -->
+		<a href="#" ng-click="location.deleteLocation(location.locationData._id)" class="btn btn-danger btn-block btn-lg">Delete Location</a>
+		</div>
+	</div>
 
 </form>
 
+<div class="row show-hide-message" ng-show="location.message">
+	<div class="col-sm-6 col-sm-offset-2">
+		
+		<div class="alert alert-info">
+			{{ location.message }}
+		</div>
 
+	</div>
+</div>

@@ -50,13 +50,13 @@ var app = angular
 
     })
     .state('list', {
-      url: '/list',
+      url: '/locations',
       templateUrl: 'views/list.html',
       controller: 'locationController',
       controllerAs: 'location'
     })
     .state('edit', {
-      url: '/edit/:locationId',
+      url: '/locations/:location_id',
       templateUrl: 'views/edit.html',
       controller: 'locationEditController',
       controllerAs: 'location'
