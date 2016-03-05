@@ -33,7 +33,7 @@
 	<div><h2>Building Addresses</h2></div>
 	<table class="table table-striped table-bordered table-hover" ng-show="location.locations">
 		<tbody>
-			<tr ng-repeat="location in location.locations | filter:searchLocation track by location._id">
+			<tr ng-repeat="location in :: location.locations | filter:searchLocation track by location._id">
 				<td>
 					<h4>{{location.assetName}}</h4>
 			        	<p>
