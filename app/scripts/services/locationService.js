@@ -46,12 +46,12 @@ angular.module('locationService', [])
 	};
 
 	// create a user
-	locationFactory.create = function(userData) {
+	locationFactory.create = function(locationData) {
 		return $http.post('http://128.114.96.140:8080/api/locations/', locationData);
 	};
 
 	// update a user
-	locationFactory.update = function(id, userData) {
+	locationFactory.update = function(id, locationData) {
 		return $http.put('http://128.114.96.140:8080/api/locations/' + id, locationData);
 	};
 

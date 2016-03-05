@@ -35,8 +35,6 @@ angular.module('locationCtrl',['locationService', 'ui.router'])
 // controller applied to user creation page
 .controller('locationCreateController', function($location, Location, Auth) {
 
-	console.log('locationCreateController');
-	
 	var vm = this;
 
 			// get info if a person is logged in
@@ -48,7 +46,7 @@ angular.module('locationCtrl',['locationService', 'ui.router'])
 	// differentiates between create or edit pages
 	vm.type = 'create';
 
-	// function to create a user
+	// function to create a location
 	vm.saveLocation = function() {
 		vm.processing = true;
 		vm.message = '';

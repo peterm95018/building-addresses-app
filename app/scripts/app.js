@@ -63,31 +63,32 @@ var app = angular
       controller: 'locationController',
       controllerAs: 'location'
     })
+    .state('create', {
+      url: '/locations/create',
+      templateUrl: 'views/edit.html',
+      controller: 'locationCreateController',
+      controllerAs: 'location'
+    })
     .state('edit', {
       url: '/locations/:location_id',
       templateUrl: 'views/edit.html',
       controller: 'locationEditController',
       controllerAs: 'location'
     })
-    .state('create', {
-      url: '/locations/create',
-      templateUrl: 'views/edit.html',
-      controller: 'locationCreateControl',
-      controllerAs: 'location'
-    })
+
     .state('users', {
 	  url: '/users',
 	  templateUrl: 'views/users/all.html',
 	  controller: 'userController',
 	  controllerAs: 'user'
     })
-    .state('userscreate', {
+    .state('usersCreate', {
 	  url: '/users/create',
 	  templateUrl: 'views/users/single.html',
 	  controller: 'userCreateController',
 	  controllerAs: 'user'
     })
-     .state('usersedit', {
+     .state('usersEdit', {
 	  url: '/users/:user_id',
 	  templateUrl: 'views/users/single.html',
 	  controller: 'userEditController',
