@@ -25,6 +25,10 @@
     </div>
   </form>
 
+<div class="jumbotron text-center" ng-show="location.processing">
+	<span class="glyphicon glyphicon-repeat spinner"></span>
+	<p>Loading Locations...</p>
+</div>
 
 	<div><h2>Building Addresses</h2></div>
 	<table class="table table-striped table-bordered table-hover" ng-show="location.locations">
@@ -59,11 +63,11 @@
 			        
 			    </td>
 			    <td class="vert-align text-center" width="40%">
-			    	<div ng-controller="mainController as main" class="button-group btn-group-sm" role="group" aria-label="...">
+			    	<!-- <div ng-controller="mainController as main" class="button-group btn-group-sm" role="group" aria-label="..."> -->
 						<button type="button" class="btn  btn-info" ng-click="showMore = !showMore">More</button>
 						<button type="button" class="btn btn-success">Map</button>
 						<a ng-if="main.loggedIn" href="#/locations/{{location._id}}" type="button" role="button" class="btn btn-warning">Edit</a>
-			        </div>
+			        <!-- </div> -->
 			    </td>
 			</tr>
 		</tbody>
