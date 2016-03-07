@@ -24,7 +24,8 @@ var app = angular
     'authService',
     'locationService',
     'userService',
-    'mapCtrl'
+    'mapCtrl',
+    'angularUtils.directives.dirPagination'
 
     ]);
 
@@ -100,7 +101,7 @@ var app = angular
 	  templateUrl: 'views/map.html',
 	  controller: 'mapController',
 	  controllerAs: 'map'
-    })
+    });
 
     $urlRouterProvider.otherwise('/');
 

@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('mainCtrl', [])
 
 .controller('mainController', function($rootScope, $location, Auth) {
@@ -32,10 +34,11 @@ angular.module('mainCtrl', [])
 				vm.processing = false;			
 
 				// if a user successfully logs in, redirect to locations page
-				if (data.success)			
+				if (data.success) {	
 					$location.path('/locations');
-				else 
+				} else {
 					vm.error = data.message;
+				}
 				
 			});
 	};
