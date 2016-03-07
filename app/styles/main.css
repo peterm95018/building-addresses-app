@@ -74,7 +74,7 @@ body {
   }
   /* Space out the masthead */
   .header {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
@@ -135,3 +135,33 @@ a.regular {
 .table tbody>tr>td.vert-align{
     vertical-align: middle;
 }
+
+.angular-leaflet-map {
+  height: 100%;
+  margin-bottom: 20px;
+}
+
+// .map-controller {
+// 	height: 100%;
+// 	width: 100%;
+// 	margin-bottom: 20px;
+// }
+
+
+html, body, #map
+{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+// body {
+//   //padding-top: 50px;
+// }
+
+.map-container-fluid {
+  height: 100%;
+  width: 100%;
+  margin-bottom: 20px;
+}
+

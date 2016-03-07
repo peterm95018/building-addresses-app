@@ -42,7 +42,7 @@ angular.module('locationService', [])
 
 	// get all users
 	locationFactory.all = function() {
-		return $http.get('http://128.114.96.140:8080/api/locations/');
+		return $http.get('http://128.114.96.140:8080/api/locations/', {cache: true});
 	};
 
 	// create a user

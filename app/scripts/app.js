@@ -24,6 +24,7 @@ var app = angular
     'authService',
     'locationService',
     'userService',
+    'mapCtrl'
 
     ]);
 
@@ -93,6 +94,12 @@ var app = angular
 	  templateUrl: 'views/users/single.html',
 	  controller: 'userEditController',
 	  controllerAs: 'user'
+    })
+    .state('map', {
+	  url: '/map',
+	  templateUrl: 'views/map.html',
+	  controller: 'mapController',
+	  controllerAs: 'map'
     })
 
     $urlRouterProvider.otherwise('/');
