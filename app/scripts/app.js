@@ -25,7 +25,8 @@ var app = angular
     'locationService',
     'userService',
     'mapCtrl',
-    'mailStopsCtrl',
+    'mailStopCtrl',
+    'mailStopService',
     'angularUtils.directives.dirPagination'
 
     ]);
@@ -104,10 +105,10 @@ var app = angular
 	  controllerAs: 'map'
     })
     .state('mailstops', {
-      url: '/mail-stops',
-      templateUrl: 'views/mail-stops.html',
-      controller: 'mailStopsController',
-      controllerAs: 'mail-stops'
+      url: '/mailstops',
+      templateUrl: 'views/mailstops.html',
+      controller: 'mailStopController',
+      controllerAs: 'mailstop'
     });
 
     $urlRouterProvider.otherwise('/');

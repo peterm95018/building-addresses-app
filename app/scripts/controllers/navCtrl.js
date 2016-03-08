@@ -22,7 +22,7 @@ angular.module('navCtrl', [])
 		{path: '/locations', title: 'Addresses'},
 		{path: '/developers', title: 'Developers'},
 		{path: '/login', title: 'Login'},
-		{path: '/mail-stops', title: 'Mail Stops'}
+		{path: '/mailstops', title: 'Mail Stops'}
 
 	];
 
