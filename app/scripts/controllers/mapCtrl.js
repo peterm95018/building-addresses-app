@@ -26,10 +26,10 @@ angular.module('mapCtrl', ['ui-leaflet'])
 
 $scope.$on("centerUrlHash", function(event, centerHash) {
 
+    //set our title from URL
     $scope.ourTitle = $location.search().title;
-    console.log('ourTitle ' + $scope.ourTitle);
 
-    console.log('centerHash ' + centerHash);
+    // centerHash is a format from map directive map?c:lat:lng:z
     var theHash = centerHash;
     var ourResult = theHash.split(":");
 
