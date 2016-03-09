@@ -33,6 +33,8 @@ angular.module('mailStopCtrl', ['mailStopService'])
 
 			// bind the mailstops that come back to vm.mailstops
 			vm.mailstops = data;
+
+			console.log(data);
 		});
 
 
