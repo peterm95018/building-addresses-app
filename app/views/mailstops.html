@@ -4,11 +4,13 @@
 
 <table class="table table-striped table-bordered table-hover" ng-show="mailstop.mailstops">
 	<tbody>
-		<tr dir-paginate="mailstop in mailstop.mailstops | itemsPerPage: 100">
+		<tr dir-paginate="mailstop in mailstop.mailstops | itemsPerPage: 50">
 		<td>
 			<h4>{{mailstop.assetName}}</h4>
 			<p>{{mailstop.address}} <br />
+			<span ng-if="mailstop.room">Room {{mailstop.room}}</span><br />
 			{{mailstop.city}}<br />
+			{{mailstop.state}} {{mailstop.zip}} <br />
 		</p>
 		</td>
 		</tr>
