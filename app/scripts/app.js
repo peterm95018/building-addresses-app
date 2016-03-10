@@ -31,7 +31,7 @@ var app = angular
 
     ]);
 
-  app.config(function($stateProvider, $urlRouterProvider) {
+  app.config(function($stateProvider, $locationProvider, $urlRouterProvider) {
     $stateProvider
     .state('main', {
       url: '/',
@@ -110,6 +110,11 @@ var app = angular
       controller: 'mailStopController',
       controllerAs: 'mailstop'
     });
+
+    // $locationProvider.html5Mode({
+    //   enabled: true,
+    //   requireBase: false
+    // });
 
     $urlRouterProvider.otherwise('/');
 

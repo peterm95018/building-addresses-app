@@ -23,7 +23,7 @@
 
     <!-- Add your site or application content here -->
     <div class="header">
-      <div class="navbar navbar-default" role="navigation">
+      <div class="navbar navbar-inverse" role="navigation">
         <div class="container">
           <div class="navbar-header">
 
@@ -34,13 +34,13 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="#/">Building Addresses App</a>
+            <a class="navbar-brand" href="/">Building Addresses App</a>
           </div>
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
             <ul class="nav navbar-nav" ng-controller="navigationController" class="menu">
-			<!-- menu items dynamically created -->
+			       <!-- menu items dynamically created in navCtrl-->
               <li ng-repeat="item in items" ng-class="{active: isActive(item)}">
               <a href="#{{item.path}}">{{item.title}}</a></li>
               
@@ -60,7 +60,7 @@
     <div class="footer">
       <div class="container">
         <p><span class="glyphicon glyphicon-envelope"></span>
-        	<a mailto:"peterm@ucsc.edu">Contact</a></p>
+        	<a href="mailto:peterm@ucsc.edu">Contact</a></p>
         
         <div ng-controller="mainController as main">
 	        <div ng-if="main.loggedIn">
