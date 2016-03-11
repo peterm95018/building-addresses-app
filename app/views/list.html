@@ -36,29 +36,29 @@
 	<table class="table table-striped table-bordered table-hover" ng-show="location.locations">
 		<tbody>
 			<!-- <tr ng-repeat="location in ::location.locations | filter:searchLocation track by location._id"> -->
-			<tr dir-paginate="location in location.locations  | filter:searchLocation | itemsPerPage: 100 track by location._id">
+			<tr dir-paginate="item in location.locations  | filter:searchLocation | itemsPerPage: 100 track by item._id">
 				<td>
 				<!-- htmlmin:ignore -->
-					<h4>{{location.assetName}}</h4>
+					<h4>{{item.assetName}}</h4>
 			        	<p>
-			        	{{location.address}}<br />
-			        	{{location.city}}, {{location.state}}<br />
-			        	{{location.zip}}<br />
+			        	{{item.address}}<br />
+			        	{{item.city}}, {{item.state}}<br />
+			        	{{item.zip}}<br />
 			        	</p>
 			        <div class="animate-show" ng-show="showMore">
 			        	
 			        	<p>
-			        	<b>Asset:</b> {{location.assetName}}<br />
-			        	<b>Address:</b> {{location.address}}<br />
-			        	<b>City:</b> {{location.city}}<br />
-			        	<b>State:</b> {{location.state}}<br />
-			        	<b>Zip:</b> {{location.zip}}<br />
+			        	<b>Asset:</b> {{item.assetName}}<br />
+			        	<b>Address:</b> {{item.address}}<br />
+			        	<b>City:</b> {{item.city}}<br />
+			        	<b>State:</b> {{item.state}}<br />
+			        	<b>Zip:</b> {{item.zip}}<br />
 			        	</p>
 
 			        	<p>
-			        	<b>Asset Number:</b> {{location.caan}}<br />
-			        	<b>Lattitude:</b> {{location.lattitude}}<br />
-			        	<b>Longitude:</b> {{location.longitude}}<br />
+			        	<b>Asset Number:</b> {{item.caan}}<br />
+			        	<b>Lattitude:</b> {{item.lattitude}}<br />
+			        	<b>Longitude:</b> {{item.longitude}}<br />
 			        	<b>Aliases:</b> <br />
 			        	</p>
 				<!-- htmlmin:ignore -->
@@ -69,9 +69,9 @@
 
 					<button type="button" class="btn  btn-info" ng-click="showMore = !showMore">More</button>
 					
-					<a href="#/map?c={{location.lattitude}}:{{location.longitude}}:17&title={{location.assetName}}" type="button" role="button" class="btn btn-success">Map</a>
+					<a href="#/map?c={{item.lattitude}}:{{item.longitude}}:17&title={{item.assetName}}" type="button" role="button" class="btn btn-success">Map</a>
 
-					<a ng-show"location.loggedIn" href="#/locations/{{location._id}}" type="button" role="button" class="btn btn-warning">Edit</a>      
+					<a ng-show="location.loggedIn" href="#/locations/{{item._id}}" type="button" role="button" class="btn btn-warning">Edit</a>      
 			    </td>
 			</tr>
 		</tbody>
