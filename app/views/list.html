@@ -38,30 +38,30 @@
 			<!-- <tr ng-repeat="location in ::location.locations | filter:searchLocation track by location._id"> -->
 			<tr dir-paginate="location in location.locations  | filter:searchLocation | itemsPerPage: 100 track by location._id">
 				<td>
+				<!-- htmlmin:ignore -->
 					<h4>{{location.assetName}}</h4>
 			        	<p>
-			        	{{location.address}}</br>
-			        	{{location.city}}, {{location.state}}</br>
-			        	{{location.zip}}</br>
+			        	{{location.address}}<br />
+			        	{{location.city}}, {{location.state}}<br />
+			        	{{location.zip}}<br />
 			        	</p>
 			        <div class="animate-show" ng-show="showMore">
 			        	
 			        	<p>
-			        	<b>Asset:</b> {{location.assetName}}</br>
-			        	<b>Address:</b> {{location.address}}</br>
-			        	<b>City:</b> {{location.city}}</br>
-			        	<b>State:</b> {{location.state}}</br>
-			        	<b>Zip:</b> {{location.zip}}</br>
+			        	<b>Asset:</b> {{location.assetName}}<br />
+			        	<b>Address:</b> {{location.address}}<br />
+			        	<b>City:</b> {{location.city}}<br />
+			        	<b>State:</b> {{location.state}}<br />
+			        	<b>Zip:</b> {{location.zip}}<br />
 			        	</p>
 
 			        	<p>
-			        	<b>Asset Number:</b> {{location.caan}}</br>
-			        	<b>Lattitude:</b> {{location.lattitude}}</br>
-			        	<b>Longitude:</b> {{location.longitude}}</br>
-			        	<b>Aliases:</b> building aliases placeholder</br>
+			        	<b>Asset Number:</b> {{location.caan}}<br />
+			        	<b>Lattitude:</b> {{location.lattitude}}<br />
+			        	<b>Longitude:</b> {{location.longitude}}<br />
+			        	<b>Aliases:</b> <br />
 			        	</p>
-
-
+				<!-- htmlmin:ignore -->
 			        </div>
 			        
 			    </td>
@@ -71,16 +71,11 @@
 					
 					<a href="#/map?c={{location.lattitude}}:{{location.longitude}}:17&title={{location.assetName}}" type="button" role="button" class="btn btn-success">Map</a>
 
-					<a href="#/locations/{{location._id}}" type="button" role="button" class="btn btn-warning">Edit</a>		        
+					<a ng-show"location.loggedIn" href="#/locations/{{location._id}}" type="button" role="button" class="btn btn-warning">Edit</a>      
 			    </td>
 			</tr>
 		</tbody>
 	</table>
-<!-- <ul ng-show"location.locations">
-<li dir-paginate="location in location.locations | itemsPerPage: 100">
-{{location.assetName}} {{location.address}} </li>
-</ul> -->
-
 <dir-pagination-controls></dir-pagination-controls>
 
 

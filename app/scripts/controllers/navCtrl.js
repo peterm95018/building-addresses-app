@@ -23,8 +23,14 @@ angular.module('navCtrl', [])
 		{path: '/developers', title: 'Developers'},
 		{path: '/login', title: 'Login'},
 		{path: '/mailstops', title: 'Mail Stops'}
-
 	];
+
+	if(vm.loggedIn) {
+		$scope.items.push({
+			path: '/users', title: 'Admin'
+		});
+	} else {
+	}
 
 	$scope.isActive = function(item) {
       if (item.path == $location.path()) {

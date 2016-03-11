@@ -2,7 +2,7 @@
 
 angular.module('userCtrl', ['userService'])
 
-.controller('userController', function(User) {
+.controller('userController', function($location, User) {
 
 	var vm = this;
 
@@ -35,7 +35,7 @@ angular.module('userCtrl', ['userService'])
 						vm.processing = false;
 						vm.users = data;
 					});
-
+				$location.path('/users');
 			});
 	};
 
@@ -62,7 +62,7 @@ angular.module('userCtrl', ['userService'])
 				vm.userData = {};
 				vm.message = data.message;
 			});
-			
+			$location.path('/users');
 	};	
 
 })
@@ -101,7 +101,7 @@ angular.module('userCtrl', ['userService'])
 				// bind the message from our API to vm.message
 				vm.message = data.message;
 			});
-			$location.path('#/users');
+			$location.path('/users');
 	};
 
 });

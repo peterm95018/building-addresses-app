@@ -7,22 +7,21 @@
 		<!-- <tr dir-paginate="mailstop in mailstop.mailstops | itemsPerPage: 50"> -->
 		<tr ng-repeat="mailstop in mailstop.mailstops">
 		<td>
+		<!-- htmlmin:ignore -->
 			<h4>{{mailstop.mailStop}}</h4>
 			<p>{{mailstop.address}} <br />
 			<span ng-if="mailstop.room">Room {{mailstop.room}}</span><br />
 			{{mailstop.city}}<br />
 			{{mailstop.state}} {{mailstop.zip}} <br />
 		</p>
+		<!-- htmlmin:ignore -->
 		</td>
 
-		<td class="vert-align text-center" width="40%">
+		<td class="vert-align text-center" width="40%">	
+			<a href="#/map?c={{mailstop.lattitude}}:{{mailstop.longitude}}:17&title={{mailstop.mailStop}}" type="button" role="button" class="btn btn-success">Map</a>
 
-					<!-- <button type="button" class="btn  btn-info" ng-click="showMore = !showMore">More</button> -->
-					
-					<a href="#/map?c={{mailstop.lattitude}}:{{mailstop.longitude}}:17&title={{mailstop.mailStop}}" type="button" role="button" class="btn btn-success">Map</a>
-
-					<a href="#/locations/{{location._id}}" type="button" role="button" class="btn btn-warning">Edit</a>		        
-			    </td>
+			<a ng-show="mailstop.loggedIn" href="#/mailstops/{{location._id}}" type="button" role="button" class="btn btn-warning">Edit</a>    
+	    </td>
 
 
 		</tr>

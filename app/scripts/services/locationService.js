@@ -9,20 +9,6 @@
  * REF: http://www.sitepoint.com/creating-crud-app-minutes-angulars-resource/
  */
 
-/*
-angular.module('buildingAddressesAppApp')
-  .factory('LocationStore', function($resource) {
-
-  	return $resource('http://128.114.96.140:8080/api/locations/:locationId',
-  		{locationId: '@_id'}, {
-  			update: {
-  				method: 'PUT'
-  			}
-  		});
-
-  });
-  */
-
   /** 
    * Note that the change from $routeParams to $state.params.location_id 
    * just uses the placeholder id here
