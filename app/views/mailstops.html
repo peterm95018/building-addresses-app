@@ -5,14 +5,14 @@
 <table class="table table-striped table-bordered table-hover" ng-show="mailstop.mailstops">
 	<tbody>
 		<!-- <tr dir-paginate="mailstop in mailstop.mailstops | itemsPerPage: 50"> -->
-		<tr ng-repeat="mailstop in mailstop.mailstops">
+		<tr dir-paginate="item in mailstop.mailstops | itemsPerPage: 100">
 		<td>
 		<!-- htmlmin:ignore -->
-			<h4>{{mailstop.mailStop}}</h4>
-			<p>{{mailstop.address}} <br />
-			<span ng-if="mailstop.room">Room {{mailstop.room}}</span><br />
-			{{mailstop.city}}<br />
-			{{mailstop.state}} {{mailstop.zip}} <br />
+			<h4>{{item.mailStop}}</h4>
+			<p>{{item.address}} <br />
+			<span ng-if="item.room">Room {{item.room}}</span><br />
+			{{item.city}}<br />
+			{{item.state}} {{item.zip}} <br />
 		</p>
 		<!-- htmlmin:ignore -->
 		</td>
@@ -20,10 +20,11 @@
 		<td class="vert-align text-center" width="40%">	
 			<a href="#/map?c={{mailstop.lattitude}}:{{mailstop.longitude}}:17&title={{mailstop.mailStop}}" type="button" role="button" class="btn btn-success">Map</a>
 
-			<a ng-show="mailstop.loggedIn" href="#/mailstops/{{location._id}}" type="button" role="button" class="btn btn-warning">Edit</a>    
+			<a ng-show="mailstop.loggedIn" href="#/mailstops/{{item._id}}" type="button" role="button" class="btn btn-warning">Edit</a>    
 	    </td>
 
 
 		</tr>
+
 		</tbody>
 </table>

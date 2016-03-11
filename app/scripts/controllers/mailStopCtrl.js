@@ -19,6 +19,8 @@ angular.module('mailStopCtrl', ['mailStopService'])
 
 	console.log('logged in mailStopsController ' + vm.loggedIn);
 
+
+
 	// set a processing variable to show loading things
 	vm.processing = true;
 
