@@ -141,6 +141,12 @@ a.regular {
   margin-bottom: 20px;
 }
 
+.footer-left {
+	float: left;
+}
+.footer-right {
+	float: right;
+}
 
 /*
 html, body, #map

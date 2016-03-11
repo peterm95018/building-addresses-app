@@ -20,9 +20,8 @@ angular.module('navCtrl', [])
   	$scope.items = [
   		{path: '/', title: 'Home'},
 		{path: '/locations', title: 'Addresses'},
-		{path: '/developers', title: 'Developers'},
-		{path: '/login', title: 'Login'},
-		{path: '/mailstops', title: 'Mail Stops'}
+		{path: '/mailstops', title: 'Mail Stops'},
+		{path: '/developers', title: 'Developers'}
 	];
 
 	if(vm.loggedIn) {

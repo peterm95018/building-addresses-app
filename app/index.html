@@ -57,11 +57,17 @@
     	</div>
     </div>
 
-    <div class="footer">
-      <div class="container">
+<div class="footer">
+  <div class="container">
+
+  	<div class="footer-left">
         <p><span class="glyphicon glyphicon-envelope"></span>
-        	<a href="mailto:peterm@ucsc.edu">Contact</a></p>
-        
+        	<a href="mailto:peterm@ucsc.edu">Contact</a>
+        </p>
+  	</div>
+
+
+    <div class="footer-right">
         <div ng-controller="mainController as main">
 	        <div ng-if="main.loggedIn">
 				<p><span class="glyphicon glyphicon-user"></span>
@@ -69,7 +75,8 @@
 			</div>
 		</div>
       </div>
-    </div>
+      </div> <!-- end container -->
+</div><!-- end footer -->
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
