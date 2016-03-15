@@ -109,6 +109,12 @@ var app = angular
       templateUrl: 'views/mailstops.html',
       controller: 'mailStopController',
       controllerAs: 'mailstop'
+    })
+    .state('editmailstop', {
+	 url: '/mailstops/:mailstop_id',
+	 templateUrl: 'views/mailstopsedit.html',
+	 controller: 'mailStopEditController',
+	 controllerAs: 'mailstop'
     });
 
     // $locationProvider.html5Mode({

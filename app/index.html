@@ -69,10 +69,11 @@
 
     <div class="footer-right">
         <div ng-controller="mainController as main">
-	        <div ng-if="main.loggedIn">
-				<p><span class="glyphicon glyphicon-user"></span>
-				<a href="#" ng-click="main.doLogout()" class="">Logout</a></p>
-			</div>
+			<p>
+				<span class="glyphicon glyphicon-user"></span>
+				<a href="#/login" ng-show="!main.loggedIn">Login</a>
+				<a href="#" ng-show="main.loggedIn" ng-click="main.doLogout()" class="">Logout</a>
+			</p>
 		</div>
       </div>
       </div> <!-- end container -->
