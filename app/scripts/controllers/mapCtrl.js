@@ -8,21 +8,59 @@
  * Controller of the buildingAddressesAppApp
  */
 angular.module('mapCtrl', ['ui-leaflet'])
-  .controller('mapController', ['$scope', '$location', function ($scope, $location) {
+  .controller('mapController', ['$scope', '$location', function ($scope, $location, MapService) {
+
+
+
+    $scope.mapGoTo = function(lat,lng,title) {
+
+        var mapObject = new Object();
+
+        alert('hello from mapController ' + lat + ' ' + lng + ' ' + title);
+
+        mapObject.lat = lat;
+        mapObject.lng = lng;
+        mapObject.title = title;
+        console.log(mapObject);
+
+
+        return mapObject;
+    };
+
+
 
     angular.extend($scope, {
     	center: {
     		lat: 36.9944,
     		lng: -122.0622,
     		zoom: 15
+            // lat: $scope.lat,
+            // lng: $scope.lng,
+            // zoom: 15
     	},
         markers: {
-
+            // ourMarker: {
+            //     lat: $scope.lat,
+            //     lng: $scope.lng,
+            //     message: $scope.title,
+            //     focus: true,
+            //     draggable: false
+            // }
         },
         defaults: {
             scrollWheelZoom: false
         }
   });
+
+    // have to add $scope to the controller
+
+
+
+ 
+
+    // Pass the incoming lat,lng,title to a map object
+    // then draw the map. 
+
 
 $scope.$on("centerUrlHash", function(event, centerHash) {
 

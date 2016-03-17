@@ -41,8 +41,13 @@
 
             <ul class="nav navbar-nav" ng-controller="navigationController" class="menu">
 			       <!-- menu items dynamically created in navCtrl-->
-              <li ng-repeat="item in items" ng-class="{active: isActive(item)}">
-              <a href="#{{item.path}}">{{item.title}}</a></li>
+
+              <!-- <li ng-repeat="item in items" ng-class="{active: isActive(item)}">
+              <a href="#{{item.path}}">{{item.title}}</a></li> -->
+              <li ui-sref-active="active" class="item active"><a ui-sref="main">Home</a></li>
+              <li><a ui-sref="list">Addresses</a></li>
+              <li><a ui-sref="developers">Developers</a></li>
+              <li><a ui-sref="mailstops">Mail Stops</a></li>
               
             </ul>
           </div>

@@ -6,7 +6,7 @@
 
 angular.module('locationCtrl',['locationService', 'ui.router'])
 
-.controller('locationController', function($location, Location, Auth) {
+.controller('locationController', function($scope, $location, Location, Auth, MapService) {
 
 	var vm = this;
 

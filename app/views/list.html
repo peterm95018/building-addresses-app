@@ -26,6 +26,7 @@
   </form>
  </div>
 
+
 <!-- <div class="jumbotron text-center" ng-show="location.processing"> -->
 <div ng-show="location.processing">
 <!-- 	<span class="glyphicon glyphicon-repeat spinner"></span>
@@ -69,7 +70,14 @@
 
 					<button type="button" class="btn  btn-info" ng-click="showMore = !showMore">More</button>
 					
-					<a href="#/map?c={{item.lattitude}}:{{item.longitude}}:17&title={{item.assetName}}" type="button" role="button" class="btn btn-success">Map</a>
+					<!-- <a href="#/map?c={{item.lattitude}}:{{item.longitude}}:17&title={{item.assetName}}" type="button" role="button" class="btn btn-success">Map</a> -->
+
+<!-- <a ui-sref="#/map?c={{item.lattitude}}:{{item.longitude}}:17&title={{item.assetName}}" type="button" role="button" class="btn btn-success">Map</a> -->
+
+
+					<span ng-controller="mapController">
+					<a ng-href="#/map" ng-click="mapGoTo(item.lattitude,item.longitude,item.assetName)" type="button" role="button" class="btn btn-success">Map</a>
+					</span>
 
 					<a ng-show="location.loggedIn" href="#/locations/{{item._id}}" type="button" role="button" class="btn btn-warning">Edit</a>      
 			    </td>
@@ -77,5 +85,8 @@
 		</tbody>
 	</table>
 <dir-pagination-controls></dir-pagination-controls>
+
+
+
 
 
