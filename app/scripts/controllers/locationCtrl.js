@@ -6,7 +6,7 @@
 
 angular.module('locationCtrl',['locationService', 'ui.router'])
 
-.controller('locationController', function($scope, $location, Location, Auth, MapService) {
+.controller('locationController', function($scope, $location, Location, Auth) {
 
 	var vm = this;
 
@@ -19,6 +19,27 @@ angular.module('locationCtrl',['locationService', 'ui.router'])
 	vm.processing = true;
 
 	vm.searchLocation = ''; //default search term
+
+
+// var items = [];
+// $scope.myMapObject = {};
+
+// 	$scope.mapDetails = function(lat, lng, assetName) {
+// 	// items.push(lat);
+// 	// items.push(lng);
+// 	// items.push(assetName);
+
+
+// 	$scope.myMapObject = {
+// 		lat: lat,
+// 		lng: lng,
+// 		assetName: assetName
+// 		};
+// 		//console.log($scope.myMapObject);
+// 		return $scope.myMapObject;
+// 	};
+
+// 	console.log($scope.myMapObject);
 
 	// grab all the locations at page load
 	Location.all()
@@ -79,7 +100,8 @@ angular.module('locationCtrl',['locationService', 'ui.router'])
 	vm.loggedIn = Auth.isLoggedIn();
 
 	console.log('logged in locationController ' + vm.loggedIn);
-
+	
+	
 
 	// get the location data for the location you want to edit
 	// $routeParams is the way we grab data from the URL
