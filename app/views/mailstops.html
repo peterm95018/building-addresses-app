@@ -22,7 +22,7 @@
 		</td>
 
 		<td class="vert-align text-center" width="40%">	
-			<a href="#/map?c={{item.lattitude}}:{{item.longitude}}:17&title={{item.mailStop}}" type="button" role="button" class="btn btn-success">Map</a>
+			<a href="#/map?c={{item.lattitude | number:4}}:{{item.longitude | number:4}}:17&title={{item.mailStop}}" type="button" role="button" class="btn btn-success">Map</a>
 
 			<a ng-show="mailstop.loggedIn" href="#/mailstops/{{item._id}}" type="button" role="button" class="btn btn-warning">Edit</a>    
 	    </td>
