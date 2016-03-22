@@ -36,8 +36,8 @@
 	<div><h2>Building Addresses</h2></div>
 	<table class="table table-striped table-bordered table-hover" ng-show="location.locations">
 		<tbody>
-			<tr ng-repeat="item in ::location.locations | filter:searchLocation track by item._id">
-<!-- 			<tr dir-paginate="item in location.locations  | filter:searchLocation | itemsPerPage: 100 track by item._id"> -->
+<!-- 			<tr ng-repeat="item in ::location.locations | filter:searchLocation track by item._id"> -->
+			<tr dir-paginate="item in location.locations  | filter:searchLocation | itemsPerPage: 100 track by item._id">
 				<td>
 				<!-- htmlmin:ignore -->
 					<h4>{{item.assetName}}</h4>
@@ -72,16 +72,6 @@
 					
 					<a href="#/map?c={{item.lattitude | number:4}}:{{item.longitude | number:4}}:16&title={{item.assetName}}" type="button" role="button" class="btn btn-success">Map</a>
 					
-<!-- 					<a ng-href="" ng-click="mapDetails('36.9988', '-121.121', 'the house')" type="button" role="button" class="btn btn-warning">Click It</button> -->
-
-<!-- 		<a ng-href="#/map" ng-click="basket.add(11.22, -122.33, 'third title')" type="button" role="button" class="btn btn-warning">Click It</button> -->
-
-
-<!-- <span ng-controller="mapController">
-<a ui-sref="#/map?c={{item.lattitude | number:4}}:{{item.longitude | number:4}}:17&title={{item.assetName}}" type="button" role="button" class="btn btn-success">Map</a>
-</span> -->
-
-
 					<a ng-show="location.loggedIn" href="#/locations/{{item._id}}" type="button" role="button" class="btn btn-warning">Edit</a>      
 			    </td>
 			</tr>
@@ -89,12 +79,5 @@
 	</table>
 <dir-pagination-controls></dir-pagination-controls>
 
-
- <ul ng-controller="mapController">
-        <li><a href="" ng-click="changeLocation('36.8899:-121.8008:12')">Watsonville</a>
-        <li><a href="" ng-click="changeLocation('34.0078:-118.8060:14')">Malibu</a>
-        <li><a href="/map" ng-click="changeLocation('33.7717:-117.9458:12')">Garden Grove</a>
-        <li><a href="/map" ng-click="changeLocation('32.5290:-117.0442:13')">Tijuana</a>
-      </ul>
 
 
