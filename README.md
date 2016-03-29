@@ -15,6 +15,12 @@ We're working on a MEAN stack app and API that uses authoritative CAAN sources, 
 
 http://building-address.ucsc.edu
 
+Here's the home screen shot.
+<img src="Screen Shot 2016-03-29 at 1.57.16 PM.png" alt="screen shot home page">
+
+Here's a screen shot of the list view with filtering.
+<img src="Screen Shot 2016-03-29 at 1.57.35 PM.png" alt="screen shot list view">
+
 ## Build & development
 
 Run `grunt` for building and `grunt serve` for preview.
