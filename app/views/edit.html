@@ -78,20 +78,22 @@
 	</div>
 
 	<div class="form-group">
-		<label class="col-sm-2 control-label">Additional Names</label>
+		<label class="col-sm-2 control-label">Abbreviated Name</label>
 		<div class="col-sm-6">
-		<input type="text" name="additionalnames" class="form-control" ng-model="location.locationData.additionalnames" >
-		<p ng-show="editForm.additionalnames.$invalid && !editForm.additionalnames.$pristine" class="help-block"></p>
+		<input type="text" name="abbreviatedName" class="form-control" ng-model="location.locationData.abbreviatedName" >
+		<p ng-show="editForm.abbreviatedName.$invalid && !editForm.abbreviatedName.$pristine" class="help-block"></p>
 		 </div>
 	</div>
 
 	<div class="form-group">
-		<label class="col-sm-2 control-label">Abbreviated Name</label>
+		<label class="col-sm-2 control-label">Additional Names</label>
 		<div class="col-sm-6">
-		<input type="text" name="abbreviatedname" class="form-control" ng-model="location.locationData.abbreviatedname" >
-		<p ng-show="editForm.abbreviatedname.$invalid && !editForm.abbreviatedname.$pristine" class="help-block"></p>
+		<input type="text" name="additionalNames" class="form-control" ng-model="location.locationData.additionalNames" >
+		<p ng-show="editForm.additionalNames.$invalid && !editForm.additionalNames.$pristine" class="help-block"></p>
 		 </div>
 	</div>
+
+
 
 	<div class="form-group">
 		<div class="col-sm-offset-2 col-sm-6">

@@ -112,7 +112,7 @@ angular.module('locationCtrl',['locationService', 'ui.router'])
 		});
 
 
-		// function to delete a location
+	// function to delete a location
 	vm.deleteLocation = function(id) {
 		console.log('entered deleteLocation');
 		vm.processing = true;
@@ -120,9 +120,9 @@ angular.module('locationCtrl',['locationService', 'ui.router'])
 		Location.delete(id)
 			.success(function(data) {
 
-				// get all users to update the table
+				// get all locations to update the table
 				// you can also set up your api 
-				// to return the list of users with the delete call
+				// to return the list of locations with the delete call
 				Location.all()
 					.success(function(data) {
 						vm.processing = false;
@@ -135,12 +135,14 @@ angular.module('locationCtrl',['locationService', 'ui.router'])
 
 	
 
-	// function to save the user
+	// function to save the location
 	vm.saveLocation = function() {
 		vm.processing = true;
 		vm.message = '';
 
-		// call the userService function to update 
+		console.log('logged in locationController ' + vm.loggedIn);
+
+		// call the locationService function to update location
 		// Location.update($routeParams.location_id, vm.locationData)
 		Location.update($state.params.location_id, vm.locationData)
 			.success(function(data) {
