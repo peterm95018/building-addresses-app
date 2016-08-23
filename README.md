@@ -32,5 +32,5 @@ Run `grunt` for building and `grunt serve` for preview.
 Running `grunt test` will run the unit tests with karma.
 
 ## To Do
-Review login process 
+See branches full-size and full-screen. I've done some UI tweaking to see what it would look like with a scrolling list of addresses displayed over a map as the default route in the app. I mistakenly created two branches, but will continue to work in full-size.
 
