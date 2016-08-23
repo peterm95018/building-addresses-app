@@ -110,6 +110,14 @@ var app = angular
       controller: 'mailStopController',
       controllerAs: 'mailstop'
     })
+
+    .state('test', {
+      url: '/test',
+      templateUrl: 'views/sidebar-map.html',
+      controller: 'locationController',
+      controllerAs: 'location'
+    })
+
     .state('editmailstop', {
 	 url: '/mailstops/:mailstop_id',
 	 templateUrl: 'views/mailstopsedit.html',

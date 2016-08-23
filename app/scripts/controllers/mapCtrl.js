@@ -10,41 +10,56 @@
 angular.module('mapCtrl', ['ui-leaflet'])
   .controller('mapController', ['$scope', '$location', function ($scope, $location) {
 
-// We can't get a maker until the $scope.$on() function fires.
+// We can't get a marker until the $scope.$on() function fires.
 // So, we may want to pluck off the componens in the URL
 
 
-    var theHash = $location.search(); // just the good stuff separated by ":"
-    var tempLatLng = theHash.c;
-    var ourResult = tempLatLng.split(":");
-    console.log(ourResult);
+//     var theHash = $location.search(); // just the good stuff separated by ":"
+//     var tempLatLng = theHash.c;
+//     var ourResult = tempLatLng.split(":");
+//     console.log(ourResult);
 
-$scope.ourLat = parseFloat(ourResult[0]);
-$scope.ourLng = parseFloat(ourResult[1]);
-$scope.ourTitle = $location.search().title;
+// $scope.ourLat = parseFloat(ourResult[0]);
+// $scope.ourLng = parseFloat(ourResult[1]);
+// $scope.ourTitle = $location.search().title;
 
 
-    angular.extend($scope, {
-    	center: {
-    		lat: 36.9944,
-    		lng: -122.0622,
-    		zoom: 15
-    	},
-        markers: {
-            markers: {
-            //mainMarker: angular.copy($scope.markers)
-            lat: $scope.ourLat,
-            lng: $scope.ourLng,
-            message: $scope.ourTitle,
-            draggable: false,
-            focus: true
-        }
-        },
+//     angular.extend($scope, {
+//     	center: {
+//     		lat: 36.9944,
+//     		lng: -122.0622,
+//     		zoom: 15
+//     	},
+//         markers: {
+//             markers: {
+//             //mainMarker: angular.copy($scope.markers)
+//             lat: $scope.ourLat,
+//             lng: $scope.ourLng,
+//             message: $scope.ourTitle,
+//             draggable: false,
+//             focus: true
+//         }
+//         },
 
-        defaults: {
-            scrollWheelZoom: false
-        }
-  });
+//         defaults: {
+//             scrollWheelZoom: false
+//         }
+//   });
+
+
+angular.extend($scope, {
+    center: {
+        lat: 36.9944,
+        lng: -122.0622,
+        zoom: 16
+    },
+    defaults: {
+        scrollWheelZoom: false,
+        zoomControlPosition: 'topright'
+    }
+});
+
+
 
    
 

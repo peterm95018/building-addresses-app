@@ -20,27 +20,6 @@ angular.module('locationCtrl',['locationService', 'ui.router'])
 
 	vm.searchLocation = ''; //default search term
 
-
-// var items = [];
-// $scope.myMapObject = {};
-
-// 	$scope.mapDetails = function(lat, lng, assetName) {
-// 	// items.push(lat);
-// 	// items.push(lng);
-// 	// items.push(assetName);
-
-
-// 	$scope.myMapObject = {
-// 		lat: lat,
-// 		lng: lng,
-// 		assetName: assetName
-// 		};
-// 		//console.log($scope.myMapObject);
-// 		return $scope.myMapObject;
-// 	};
-
-// 	console.log($scope.myMapObject);
-
 	// grab all the locations at page load
 	Location.all()
 		.success(function(data) {
