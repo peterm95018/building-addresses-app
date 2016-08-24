@@ -24,7 +24,8 @@
                     
                     <table class="table table-striped table-bordered table-hover" ng-show="location.locations">
                         <tbody>
-                            <tr dir-paginate="item in location.locations  | filter:searchLocation | itemsPerPage: 100 track by item._id">
+                            <!-- <tr dir-paginate="item in location.locations  | filter:searchLocation | itemsPerPage: 100 track by item._id"> -->
+                            <tr ng-repeat="item in location.locations  | filter:searchLocation track by item._id">
                                 <td>
                                 <!-- htmlmin:ignore -->
                                     <h4>{{item.assetName}}</h4>
