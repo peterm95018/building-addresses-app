@@ -4,9 +4,9 @@
  * create, edit and list of locations
  */
 
-angular.module('locationCtrl',['locationService', 'ui.router'])
+angular.module('locationCtrl',['locationService', 'ui.router', 'sharedService'])
 
-.controller('locationController', function($scope, $location, Location, Auth) {
+.controller('locationController', function($scope, $location, Location, Auth, SharedService) {
 
 	var vm = this;
 
@@ -14,6 +14,19 @@ angular.module('locationCtrl',['locationService', 'ui.router'])
 	vm.loggedIn = Auth.isLoggedIn();
 
 	console.log('logged in locationController ' + vm.loggedIn);
+
+// now we have to figure out how to pass these location scope vars to map controller vars. or a service
+	
+
+$scope.placeMarker = function(lat, lng, assetName) {
+	SharedService.placeMarker(lat, lng, assetName);
+};
+
+$scope.mapObject = SharedService.mapObject;
+
+$scope.$watch('mapObject', function() {
+	SharedService.mapObject = $scope.mapObject;
+});
 
 	// set a processing variable to show loading things
 	vm.processing = true;
