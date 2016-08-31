@@ -27,7 +27,8 @@ var app = angular
     'mapCtrl',
     'mailStopCtrl',
     'mailStopService',
-    'angularUtils.directives.dirPagination'
+    'angularUtils.directives.dirPagination',
+    'sharedService'
 
     ]);
 
