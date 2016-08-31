@@ -14,7 +14,7 @@
 	self.mapObject.lat = lat;
 	self.mapObject.lng = lng;
 	self.mapObject.message = assetName;
-	console.log(self.mapObject);
+	//console.log(self.mapObject);
 	return self.mapObject;
 	}
 

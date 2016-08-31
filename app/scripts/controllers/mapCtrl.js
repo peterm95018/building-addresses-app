@@ -8,7 +8,7 @@
  * Controller of the buildingAddressesAppApp
  */
 angular.module('mapCtrl', ['ui-leaflet'])
-  .controller('mapController', ['$scope', '$location', 'SharedService', function ($scope, $location, SharedService) {
+  .controller('mapController', ['$scope', '$location', 'SharedService', 'leafletData', function ($scope, $location, SharedService, leafletData) {
 
 
 //     var theHash = $location.search(); // just the good stuff separated by ":"
@@ -50,18 +50,30 @@ $scope.mapObject = SharedService.mapObject;
 $scope.$watch('mapObject["lat"]', function() {
 	$scope.mapObject = SharedService.mapObject;
 
+
+
 	// destroy markers before recreating
 	// keep one marker on map at a time
 	$scope.markers = new Array();
+
 	
 	// create the marker object
 	$scope.markers.push({
-	lat: $scope.mapObject.lat,
-	lng: $scope.mapObject.lng,
-	message: $scope.mapObject.message,
-	draggable: false,
-	focus: true
+		lat: $scope.mapObject.lat,
+		lng: $scope.mapObject.lng,
+		message: $scope.mapObject.message,
+		draggable: false,
+		focus: true
 	});
+
+
+
+
+	// move center of map to selected items coords and zoom in
+    leafletData.getMap().then(function(map) {
+    	map.setView(new L.LatLng($scope.mapObject.lat, $scope.mapObject.lng),17);
+    });
+ 
 
 
 
