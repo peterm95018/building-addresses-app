@@ -148,6 +148,7 @@ a.regular {
 	float: right;
 }
 
+
 /*
 html, body, #map
 {
@@ -184,6 +185,7 @@ body {
     background:rgb(255,255,255);
   background:rgba(255,255,255,.85);
 }
+
 #sidebar {
     position: relative;
     height: 100%;
@@ -204,3 +206,7 @@ body {
   width: 100%;
 }
 
+.angular-leaflet-map {
+  height: 100%;
+  margin-bottom: 20px;
+}

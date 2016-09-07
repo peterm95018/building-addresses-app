@@ -67,7 +67,8 @@
 
 					<button type="button" class="btn  btn-info" ng-click="showMore = !showMore">More</button>
 					
-					<a href="#/map?c={{item.lattitude | number:4}}:{{item.longitude | number:4}}:16&title={{item.assetName}}" type="button" role="button" class="btn btn-success">Map</a>
+					<!-- <a href="#/map?c={{item.lattitude | number:4}}:{{item.longitude | number:4}}:16&title={{item.assetName}}" type="button" role="button" class="btn btn-success">Map</a> -->
+					<a href class="btn btn-success" ng-click="placeMarker(item.lattitude, item.longitude, item.assetName)">Map</a>
 					
 					<a ng-show="location.loggedIn" href="#/locations/{{item._id}}" type="button" role="button" class="btn btn-warning">Edit</a>      
 			    </td>
