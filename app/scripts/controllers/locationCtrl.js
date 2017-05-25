@@ -16,11 +16,12 @@ angular.module('locationCtrl',['locationService', 'ui.router', 'sharedService'])
 	console.log('logged in locationController ' + vm.loggedIn);
 
 // now we have to figure out how to pass these location scope vars to map controller vars. or a service
-	
+
 
 $scope.placeMarker = function(lat, lng, assetName) {
 	SharedService.placeMarker(lat, lng, assetName);
 };
+
 
 $scope.mapObject = SharedService.mapObject;
 
@@ -72,7 +73,7 @@ $scope.$watch('mapObject', function() {
 				vm.message = data.message;
 			});
 			$location.path('/locations');
-	};	
+	};
 
 })
 
@@ -92,8 +93,8 @@ $scope.$watch('mapObject', function() {
 	vm.loggedIn = Auth.isLoggedIn();
 
 	console.log('logged in locationController ' + vm.loggedIn);
-	
-	
+
+
 
 	// get the location data for the location you want to edit
 	// $routeParams is the way we grab data from the URL
@@ -113,19 +114,19 @@ $scope.$watch('mapObject', function() {
 			.success(function(data) {
 
 				// get all locations to update the table
-				// you can also set up your api 
+				// you can also set up your api
 				// to return the list of locations with the delete call
 				Location.all()
 					.success(function(data) {
 						vm.processing = false;
 						vm.locations = data;
 					});
-			
+
 			});
 			$location.path('/locations');
 	};
 
-	
+
 
 	// function to save the location
 	vm.saveLocation = function() {
