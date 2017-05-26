@@ -128,7 +128,7 @@ a.regular {
 }
 
 @-moz-keyframes spin {
-	from 	{ -moz-transform:rotate(0deg); }	
+	from 	{ -moz-transform:rotate(0deg); }
 	to 	{ -moz-transform:rotate(360deg); }
 }
 
@@ -164,7 +164,7 @@ html, body, #map
 
 body {
     padding-top:50px;
-    overflow: hidden;
+    /*overflow: hidden; */
 }
 
 
@@ -192,7 +192,7 @@ body {
     position: relative;
     height: 100%;
     overflow-y: auto;
-  
+
 
 }
 #sidebar .list-group-item {
