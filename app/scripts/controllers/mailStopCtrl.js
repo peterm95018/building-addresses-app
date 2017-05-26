@@ -7,9 +7,9 @@
  * # MailstopsCtrl
  * Controller of the buildingAddressesAppApp
  */
-angular.module('mailStopCtrl', ['mailStopService'])
-  .controller('mailStopController', function(MailStop, $location, Auth) {
-   
+angular.module('mailStopCtrl', ['mailStopService', 'sharedService'])
+  .controller('mailStopController', function($scope, MailStop, $location, Auth, SharedService) {
+
    var vm = this;
 
 		// get info if a person is logged in
@@ -17,7 +17,9 @@ angular.module('mailStopCtrl', ['mailStopService'])
 
 	console.log('logged in mailStopsController ' + vm.loggedIn);
 
-
+  $scope.placeMarker = function(lat, lng, assetName) {
+  	SharedService.placeMarker(lat, lng, assetName);
+  };
 
 	// set a processing variable to show loading things
 	vm.processing = true;
@@ -67,26 +69,26 @@ angular.module('mailStopCtrl', ['mailStopService'])
 			.success(function(data) {
 
 				// get all users to update the table
-				// you can also set up your api 
+				// you can also set up your api
 				// to return the list of users with the delete call
 				MailStop.all()
 					.success(function(data) {
 						vm.processing = false;
 						vm.mailstops = data;
 					});
-			
+
 			});
 			$location.path('/mailstops');
 	};
 
-	
+
 
 	// function to save the user
 	vm.saveMailStop = function() {
 		vm.processing = true;
 		vm.message = '';
 
-		// call the userService function to update 
+		// call the userService function to update
 		// Location.update($routeParams.location_id, vm.locationData)
 		MailStop.update($state.params.mailstop_id, vm.mailStopData)
 			.success(function(data) {
