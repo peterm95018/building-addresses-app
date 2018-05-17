@@ -3,7 +3,7 @@
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
 version 0.15.1.
 
-This project is the front end app for http:/building-address.ucsc.edu. See http://https://github.com/peterm95018/building-address-api for the ExpressJS app that powers the backend and API.
+This project is the front end app for http:/building-address.ucsc.edu. See https://github.com/peterm95018/building-address-api for the ExpressJS app that powers the backend and API.
 
 # The Story
 UCSC added street names in September 2010. In 2015 all buildings, received official street addresses. 
