@@ -16,6 +16,7 @@ How does a Police incident report know that parking lot 140 is aka 400 Foundry R
 
 We're working on a MEAN stack app and API that uses authoritative CAAN sources, OpenStreetMaps and our building addresses to present a "cross walk" app that filters records and provides basic locative info.
 
+This project utilizes AngularJS, Nginx, MongoDB, OpenStreetMaps.
 
 # Screen Shots
 <img src="Screen Shot 2016-03-29 at 1.57.16 PM.png" alt="screen shot home page">
@@ -23,7 +24,7 @@ We're working on a MEAN stack app and API that uses authoritative CAAN sources, 
 Here's a screen shot of the list view with filtering.
 <img src="Screen Shot 2016-03-29 at 1.57.35 PM.png" alt="screen shot list view">
 
-## Build & development
+## Build & Development
 
 Run `grunt` for building and `grunt serve` for preview.
 
